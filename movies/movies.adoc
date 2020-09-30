@@ -28,6 +28,12 @@ A simple cypher query can look something like this
 Match (m:Movie) where m.released > 2000 RETURN m limit 5
 ----
 
+++++
+<div style="background: #5CA6D9EE; padding: 12px; color: white; border-radius: 2px">
+Hint: You can click on the query above to populate it in the editor.
+</div>
+++++
+
 *Expected Result*: The above query will return all the movies that were realesed after the year 2000 limiting the result to 5 items.
 
 image::{images}/5-movies.svg[width="100%"]
@@ -35,14 +41,14 @@ image::{images}/5-movies.svg[width="100%"]
 *Try*
 
 1. Write a query to retrieve all the movies released after the year 2005.
-
++
 [source,cypher]
 ----
 Match (m:Movie) where m.released > 2005 RETURN m
 ----
 
 2. Write a query to return the count of movies released after the year 2005. (Hint: you can use the `count(m)` function to return the count)
-
++
 [source,cypher]
 ----
 Match (m:Movie) where m.released > 2005 RETURN count(m)
@@ -75,6 +81,12 @@ Two nodes can be connected with more than one relationships.
 MATCH (p:Person)-[d:DIRECTED]-(m:Movie) where m.released > 2010 RETURN p,d,m
 ----
 
+++++
+<div style="background: #5CA6D9EE; padding: 12px; color: white; border-radius: 2px">
+Hint: You can click on the query above to populate it in the editor.
+</div>
+++++
+
 *Expected Result*: The above query will return all Person nodes who directed a movie that was released after 2010.
 
 image::{images}/movies-after-2010.svg[width="100%"]
@@ -82,7 +94,7 @@ image::{images}/movies-after-2010.svg[width="100%"]
 *Try*
 
 1. Query to get all the people who acted in a movie that was released after 2010.
-
++
 [source, cypher]
 ----
 MATCH (p:Person)-[d:ACTED_IN]-(m:Movie) where m.released > 2010 RETURN p,d,m
@@ -125,7 +137,7 @@ image::{images}/movies-properties.jpg[width="100%"]
 *Try*
 
 1. Wrtie a query to get `name` and `born` properties of the Person node.
-
++
 [source, cypher]
 MATCH (p:Person) return p.name, p.born
 
@@ -141,7 +153,7 @@ The above statement will create a new `Person` node with property `name` having 
 *Try*
 
 1. Create a new `Person` node with a property `name` having the value of your name.
-
++
 [source, cypher]
 Create (p:Person {name: '<Your Name>'}) RETURN p
 
@@ -168,14 +180,14 @@ You can read more about Where clause and list of all filters here - https://neo4
 *Try*
 
 1. Find the movie with title "Cloud Atlas"
-
++
 [source, cypher]
 MATCH (m:Movie {title: "Cloud Atlas"}) return m
 
 2. Get all the movies that were released between 2010 and 2015.
-
++
 [source, cypher]
-MATCH (m:Movies) where m.released > 2010 and m.released < 2015 RETURN m
+MATCH (m:Movie) where m.released > 2010 and m.released < 2015 RETURN m
 
 == Merge Clause
 
@@ -197,11 +209,11 @@ The above statement will create the Person node if it does not exist. If the nod
 *Try*
 
 1. Write a query using Merge to create a movie node with title "Greyhound". If the node does not exist then set its `released` property to 2020 and `lastUpdatedAt` property to the current time stamp. If the node already exists, then only set `lastUpdatedAt` to the current time stamp. Return the movie node.
-
++
 [source, cyper]
 MERGE (m:movie {title: 'Greyhound'})
-ON MATCH SET p.createdAt = timestamp()
-ON CREATE SET released = "2020" and p.lastLoggedInAt = timestamp()
+ON MATCH SET m.lastUpdatedAt = timestamp()
+ON CREATE SET released = "2020" and m.lastUpdatedAt = timestamp()
 Return m
 
 == Create a Relationship
@@ -219,10 +231,10 @@ The above statement will create a relationship `:WATCHED` between the existing `
 *Try*
 
 1. Create a relationship `:WATCHED` between the node you created for yourself previously in step 6 and the movie *Cloud Atlas* and then return the type of created relationship
-
++
 [source, cypher]
 MATCH (p:Person), (m:Movie)
-WHERE p.name = "<Your Name>" and m.name = "Cloud Atlas"
+WHERE p.name = "<Your Name>" and m.title = "Cloud Atlas"
 CREATE (p)-[w:WATCHED]->(m)
 RETURN type(w)
 
@@ -241,7 +253,7 @@ To denote an outgoing or an incoming relationship in cypher, we use `->` or `<-`
 Example -
 
 [source, cypher]
-MATCH (p:Person)-[:ACTED_IN]->(m:Movie)
+MATCH (p:Person)-[r:ACTED_IN]->(m:Movie) RETURN p,r,m
 
 In the above query Person has an outgoing relationship and movie has an incoming relationship.
 
@@ -249,39 +261,44 @@ Although, in the case of the movies dataset, the direction of the relationship i
 even without denoting the direction in the query, it will return the same result. So the query -
 
 [source, cypher]
-MATCH (p:Person)-[:ACTED_IN]-[m:Movie]
+MATCH (p:Person)-[:ACTED_IN]-(m:Movie) RETURN p,r,m
 
 will return the same reuslt as the above one.
 
 *Try*
-1. Write a query to find the nodes `Person` and `Movie` which are connected by `REVIEWED` relationship and is outgoing from the `Person` node and incoming to the `Movie` node.
 
+1. Write a query to find the nodes `Person` and `Movie` which are connected by `REVIEWED` relationship and is outgoing from the `Person` node and incoming to the `Movie` node.
++
 [source, cyper]
+----
 MATCH (p:Person)-[r:REVIEWED]-(m:Movie) return p,r,m
+----
 
 == Advcance Cypher queries
 
 Let's look at some questions that you can answer with cypher queries.
 
 1. *Finding who directed Cloud Atlas movie*
-
++
 [source, cypher]
-MATCH (m:Movie {title: 'Cloud Atlas'})<-[d:DIRECTED]-(p:Persom) return p.name
+MATCH (m:Movie {title: 'Cloud Atlas'})<-[d:DIRECTED]-(p:Person) return p.name
 
 2. *Finding all people who have co-acted with Tom Hanks in any movie*
-
++
 [source, cypher]
 MATCH (tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(:Movie)<-[:ACTED_IN]-(p:Person) return p.name
 
 3. *Finding all people related to the movie Cloud Atlas in any way*
-
++
 [source, cypher]
-MATCH (p:Person)-[relatedTo]-(m:Movie {title: "Cloud Atlas"}) return people.name, type(relatedTo)
-
+----
+MATCH (p:Person)-[relatedTo]-(m:Movie {title: "Cloud Atlas"}) return p.name, type(relatedTo)
+----
++
 In the above query we only used the variable `relatedTo` which will try to find all the relationships between any `Person` node and the movie node "Cloud Atlas"
 
 4. Finding Movies and Actors that are 3 hops away from Kevin Bacon.
-
++
 [source, cypher]
 MATCH (p:Person {name: 'Kevin Bacon'})-[*1..3]-(hollywood) return DISTINCT p, hollywood
 
