@@ -74,7 +74,7 @@ Hint: You can click on the query above to populate it in the editor.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="http://localhost:8001//img/5-movies.svg" alt="5 movies" width="100%">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/5-movies.svg" alt="5 movies" width="100%">
 </div>
 </div>
 <div class="paragraph">
@@ -84,7 +84,7 @@ Hint: You can click on the query above to populate it in the editor.
 <ol class="arabic">
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p>Write a query to retrieve all the movies released after the year 2005.</p>
-<div class="listingblock">
+<div class="listingblock try-cypher-result">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->Match (m:Movie) where m.released &gt; 2005 RETURN m<!--/code--></pre>
 </div>
@@ -92,7 +92,7 @@ Hint: You can click on the query above to populate it in the editor.
 </li>
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p>Write a query to return the count of movies released after the year 2005. (Hint: you can use the <code>count(m)</code> function to return the count)</p>
-<div class="listingblock">
+<div class="listingblock try-cypher-result">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->Match (m:Movie) where m.released &gt; 2005 RETURN count(m)<!--/code--></pre>
 </div>
@@ -124,7 +124,7 @@ parenthesis — like <code>(p:Person)</code> where <code>p</code> is a variable 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="http://localhost:8001//img/schema.svg" alt="schema" width="100%">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/schema.svg" alt="schema" width="100%">
 </div>
 </div>
 <div class="paragraph">
@@ -154,7 +154,7 @@ Hint: You can click on the query above to populate it in the editor.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="http://localhost:8001//img/movies-after-2010.svg" alt="movies after 2010" width="100%">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/movies-after-2010.svg" alt="movies after 2010" width="100%">
 </div>
 </div>
 <div class="paragraph">
@@ -164,7 +164,7 @@ Hint: You can click on the query above to populate it in the editor.
 <ol class="arabic">
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p>Query to get all the people who acted in a movie that was released after 2010.</p>
-<div class="listingblock">
+<div class="listingblock try-cypher-result">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (p:Person)-[d:ACTED_IN]-(m:Movie) where m.released &gt; 2010 RETURN p,d,m<!--/code--></pre>
 </div>
@@ -188,7 +188,7 @@ Hint: You can click on the query above to populate it in the editor.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="http://localhost:8001//img/schema.svg" alt="schema" width="100%">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/schema.svg" alt="schema" width="100%">
 </div>
 </div>
 <div class="paragraph">
@@ -237,7 +237,7 @@ Hint: You can click on the query above to populate it in the editor.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="http://localhost:8001//img/movies-properties.jpg" alt="movies properties" width="100%">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/movies-properties.jpg" alt="movies properties" width="100%">
 </div>
 </div>
 <div class="paragraph">
@@ -250,7 +250,7 @@ Hint: You can click on the query above to populate it in the editor.
 <ol class="arabic">
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p>Wrtie a query to get <code>name</code> and <code>born</code> properties of the Person node.</p>
-<div class="listingblock">
+<div class="listingblock try-cypher-result">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (p:Person) return p.name, p.born<!--/code--></pre>
 </div>
@@ -287,7 +287,7 @@ Hint: You can click on the query above to populate it in the editor.
 <ol class="arabic">
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p>Create a new <code>Person</code> node with a property <code>name</code> having the value of your name.</p>
-<div class="listingblock">
+<div class="listingblock try-cypher-result">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->Create (p:Person {name: '&lt;Your Name&gt;'}) RETURN p<!--/code--></pre>
 </div>
@@ -341,7 +341,7 @@ Hint: You can click on the query above to populate it in the editor.
 <ol class="arabic">
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p>Find the movie with title "Cloud Atlas"</p>
-<div class="listingblock">
+<div class="listingblock try-cypher-result">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (m:Movie {title: "Cloud Atlas"}) return m<!--/code--></pre>
 </div>
@@ -349,7 +349,7 @@ Hint: You can click on the query above to populate it in the editor.
 </li>
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p>Get all the movies that were released between 2010 and 2015.</p>
-<div class="listingblock">
+<div class="listingblock try-cypher-result">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (m:Movie) where m.released &gt; 2010 and m.released &lt; 2015 RETURN m<!--/code--></pre>
 </div>
@@ -402,9 +402,9 @@ Return p<!--/code--></pre>
 <ol class="arabic">
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p>Write a query using Merge to create a movie node with title "Greyhound". If the node does not exist then set its <code>released</code> property to 2020 and <code>lastUpdatedAt</code> property to the current time stamp. If the node already exists, then only set <code>lastUpdatedAt</code> to the current time stamp. Return the movie node.</p>
-<div class="listingblock">
+<div class="listingblock try-cypher-result">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cyper" lang="cyper"><!--code class="cyper language-cyper"-->MERGE (m:movie {title: 'Greyhound'})
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MERGE (m:movie {title: 'Greyhound'})
 ON MATCH SET m.lastUpdatedAt = timestamp()
 ON CREATE SET released = "2020" and m.lastUpdatedAt = timestamp()
 Return m<!--/code--></pre>
@@ -445,7 +445,7 @@ RETURN type(w)<!--/code--></pre>
 <ol class="arabic">
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p>Create a relationship <code>:WATCHED</code> between the node you created for yourself previously in step 6 and the movie <strong>Cloud Atlas</strong> and then return the type of created relationship</p>
-<div class="listingblock">
+<div class="listingblock try-cypher-result">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (p:Person), (m:Movie)
 WHERE p.name = "&lt;Your Name&gt;" and m.title = "Cloud Atlas"
@@ -472,7 +472,7 @@ RETURN type(w)<!--/code--></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="http://localhost:8001//img/relationship-types.svg" alt="relationship types" width="400">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/relationship-types.svg" alt="relationship types" width="400">
 </div>
 </div>
 <div class="paragraph">
@@ -514,9 +514,9 @@ even without denoting the direction in the query, it will return the same result
 <ol class="arabic">
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p>Write a query to find the nodes <code>Person</code> and <code>Movie</code> which are connected by <code>REVIEWED</code> relationship and is outgoing from the <code>Person</code> node and incoming to the <code>Movie</code> node.</p>
-<div class="listingblock">
+<div class="listingblock try-cypher-result">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cyper" lang="cyper"><!--code class="cyper language-cyper"-->MATCH (p:Person)-[r:REVIEWED]-(m:Movie) return p,r,m<!--/code--></pre>
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (p:Person)-[r:REVIEWED]-(m:Movie) return p,r,m<!--/code--></pre>
 </div>
 </div>
 </li>

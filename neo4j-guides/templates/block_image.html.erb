@@ -6,7 +6,7 @@ end %>>
 if attr? :link %>
 <a class="image" href="<%= attr :link %>"><img src="<%= image_uri(attr :target) %>" alt="<%= attr :alt %>"<%= (attr? :width) ? %( width="#{attr :width}") : nil %><%= (attr? :height) ? %( height="#{attr :height}") : nil %>></a><%
 else %>
-<img src="<%= image_uri(attr :target) %>" alt="<%= attr :alt %>"<%= (attr? :width) ? %( width="#{attr :width}") : nil %><%= (attr? :height) ? %( height="#{attr :height}") : nil %>><%
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="<%= image_uri(attr :target) %>" alt="<%= attr :alt %>"<%= (attr? :width) ? %( width="#{attr :width}") : nil %><%= (attr? :height) ? %( height="#{attr :height}") : nil %>><%
 end %>
 </div><%
 if title? %>

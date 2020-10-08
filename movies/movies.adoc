@@ -42,14 +42,14 @@ image::{images}/5-movies.svg[width="100%"]
 
 1. Write a query to retrieve all the movies released after the year 2005.
 +
-[source,cypher]
+[source.try-cypher-result,cypher]
 ----
 Match (m:Movie) where m.released > 2005 RETURN m
 ----
 
 2. Write a query to return the count of movies released after the year 2005. (Hint: you can use the `count(m)` function to return the count)
 +
-[source,cypher]
+[source.try-cypher-result,cypher]
 ----
 Match (m:Movie) where m.released > 2005 RETURN count(m)
 ----
@@ -95,7 +95,7 @@ image::{images}/movies-after-2010.svg[width="100%"]
 
 1. Query to get all the people who acted in a movie that was released after 2010.
 +
-[source, cypher]
+[source.try-cypher-result,cypher]
 ----
 MATCH (p:Person)-[d:ACTED_IN]-(m:Movie) where m.released > 2010 RETURN p,d,m
 ----
@@ -138,7 +138,7 @@ image::{images}/movies-properties.jpg[width="100%"]
 
 1. Wrtie a query to get `name` and `born` properties of the Person node.
 +
-[source, cypher]
+[source.try-cypher-result,cypher]
 MATCH (p:Person) return p.name, p.born
 
 == Create a Node
@@ -154,7 +154,7 @@ The above statement will create a new `Person` node with property `name` having 
 
 1. Create a new `Person` node with a property `name` having the value of your name.
 +
-[source, cypher]
+[source.try-cypher-result,cypher]
 Create (p:Person {name: '<Your Name>'}) RETURN p
 
 == Finding Nodes with *Match* and *Where* Clause
@@ -181,12 +181,12 @@ You can read more about Where clause and list of all filters here - https://neo4
 
 1. Find the movie with title "Cloud Atlas"
 +
-[source, cypher]
+[source.try-cypher-result,cypher]
 MATCH (m:Movie {title: "Cloud Atlas"}) return m
 
 2. Get all the movies that were released between 2010 and 2015.
 +
-[source, cypher]
+[source.try-cypher-result,cypher]
 MATCH (m:Movie) where m.released > 2010 and m.released < 2015 RETURN m
 
 == Merge Clause
@@ -210,7 +210,7 @@ The above statement will create the Person node if it does not exist. If the nod
 
 1. Write a query using Merge to create a movie node with title "Greyhound". If the node does not exist then set its `released` property to 2020 and `lastUpdatedAt` property to the current time stamp. If the node already exists, then only set `lastUpdatedAt` to the current time stamp. Return the movie node.
 +
-[source, cyper]
+[source.try-cypher-result,cypher]
 MERGE (m:movie {title: 'Greyhound'})
 ON MATCH SET m.lastUpdatedAt = timestamp()
 ON CREATE SET released = "2020" and m.lastUpdatedAt = timestamp()
@@ -232,7 +232,7 @@ The above statement will create a relationship `:WATCHED` between the existing `
 
 1. Create a relationship `:WATCHED` between the node you created for yourself previously in step 6 and the movie *Cloud Atlas* and then return the type of created relationship
 +
-[source, cypher]
+[source.try-cypher-result,cypher]
 MATCH (p:Person), (m:Movie)
 WHERE p.name = "<Your Name>" and m.title = "Cloud Atlas"
 CREATE (p)-[w:WATCHED]->(m)
@@ -269,7 +269,7 @@ will return the same reuslt as the above one.
 
 1. Write a query to find the nodes `Person` and `Movie` which are connected by `REVIEWED` relationship and is outgoing from the `Person` node and incoming to the `Movie` node.
 +
-[source, cyper]
+[source.try-cypher-result,cypher]
 ----
 MATCH (p:Person)-[r:REVIEWED]-(m:Movie) return p,r,m
 ----
