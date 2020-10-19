@@ -213,7 +213,7 @@ The above statement will create the Person node if it does not exist. If the nod
 [source.try-cypher-result,cypher]
 MERGE (m:movie {title: 'Greyhound'})
 ON MATCH SET m.lastUpdatedAt = timestamp()
-ON CREATE SET released = "2020" and m.lastUpdatedAt = timestamp()
+ON CREATE SET m.released = "2020" and m.lastUpdatedAt = timestamp()
 Return m
 
 == Create a Relationship
