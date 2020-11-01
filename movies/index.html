@@ -406,7 +406,7 @@ Return p<!--/code--></pre>
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MERGE (m:movie {title: 'Greyhound'})
 ON MATCH SET m.lastUpdatedAt = timestamp()
-ON CREATE SET m.released = "2020" and m.lastUpdatedAt = timestamp()
+ON CREATE SET m.released = "2020", m.lastUpdatedAt = timestamp()
 Return m<!--/code--></pre>
 </div>
 </div>
