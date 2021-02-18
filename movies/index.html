@@ -70,11 +70,11 @@ you would use Cypher to query the Neo4j Database.</p>
 Hint: You can click on the query above to populate it in the editor.
 </div>
 <div class="paragraph">
-<p style='margin-top: 12px; margin-bottom: 24px; font-size: 16px; line-height: 28px;'><strong>Expected Result</strong>: The above query will return all the movies that were realesed after the year 2000 limiting the result to 5 items.</p>
+<p style='margin-top: 12px; margin-bottom: 24px; font-size: 16px; line-height: 28px;'><strong>Expected Result</strong>: The above query will return all the movies that were released after the year 2000 limiting the result to 5 items.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://guides.neo4j.com/sandbox/movies/img/5-movies.svg" alt="5 movies" width="100%">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/5-movies.svg" alt="5 movies" width="100%">
 </div>
 </div>
 <div class="paragraph">
@@ -124,7 +124,7 @@ parenthesis — like <code>(p:Person)</code> where <code>p</code> is a variable 
 </div>
 <div class="imageblock">
 <div class="content">
-<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://guides.neo4j.com/sandbox/movies/img/schema.svg" alt="schema" width="100%">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/schema.svg" alt="schema" width="100%">
 </div>
 </div>
 <div class="paragraph">
@@ -154,7 +154,7 @@ Hint: You can click on the query above to populate it in the editor.
 </div>
 <div class="imageblock">
 <div class="content">
-<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://guides.neo4j.com/sandbox/movies/img/movies-after-2010.svg" alt="movies after 2010" width="100%">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/movies-after-2010.svg" alt="movies after 2010" width="100%">
 </div>
 </div>
 <div class="paragraph">
@@ -188,7 +188,7 @@ Hint: You can click on the query above to populate it in the editor.
 </div>
 <div class="imageblock">
 <div class="content">
-<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://guides.neo4j.com/sandbox/movies/img/schema.svg" alt="schema" width="100%">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/schema.svg" alt="schema" width="100%">
 </div>
 </div>
 <div class="paragraph">
@@ -237,7 +237,7 @@ Hint: You can click on the query above to populate it in the editor.
 </div>
 <div class="imageblock">
 <div class="content">
-<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://guides.neo4j.com/sandbox/movies/img/movies-properties.jpg" alt="movies properties" width="100%">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/movies-properties.jpg" alt="movies properties" width="100%">
 </div>
 </div>
 <div class="paragraph">
@@ -249,7 +249,7 @@ Hint: You can click on the query above to populate it in the editor.
 <div class="olist arabic">
 <ol class="arabic">
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
-<p>Wrtie a query to get <code>name</code> and <code>born</code> properties of the Person node.</p>
+<p>Write a query to get <code>name</code> and <code>born</code> properties of the Person node.</p>
 <div class="listingblock try-cypher-result">
 <div class="content">
 <pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (p:Person) return p.name, p.born<!--/code--></pre>
@@ -472,7 +472,7 @@ RETURN type(w)<!--/code--></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://guides.neo4j.com/sandbox/movies/img/relationship-types.svg" alt="relationship types" width="400">
+<img style="background: #fff; padding: 12px; margin-bottom: 24px;" src="http://localhost:8001//img/relationship-types.svg" alt="relationship types" width="400">
 </div>
 </div>
 <div class="paragraph">
@@ -501,11 +501,11 @@ even without denoting the direction in the query, it will return the same result
 </div>
 <div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (p:Person)-[:ACTED_IN]-(m:Movie) RETURN p,r,m<!--/code--></pre>
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (p:Person)-[r:ACTED_IN]-(m:Movie) RETURN p,r,m<!--/code--></pre>
 </div>
 </div>
 <div class="paragraph">
-<p style='margin-top: 12px; margin-bottom: 24px; font-size: 16px; line-height: 28px;'>will return the same reuslt as the above one.</p>
+<p style='margin-top: 12px; margin-bottom: 24px; font-size: 16px; line-height: 28px;'>will return the same result as the above one.</p>
 </div>
 <div class="paragraph">
 <p style='margin-top: 12px; margin-bottom: 24px; font-size: 16px; line-height: 28px;'><strong>Try</strong></p>
@@ -530,7 +530,7 @@ even without denoting the direction in the query, it will return the same result
 
 <slide class="row-fluid">
   <div class="col-sm-12">
-    <h3>Advcance Cypher queries</h3>
+    <h3>Advance Cypher queries</h3>
     <br/>
     <div>
       <div class="paragraph">
@@ -602,7 +602,7 @@ you can use one of the below resources -</p>
 <p><a href="https://neo4j.com/docs/cypher-manual/4.0/">Cypher Manual</a> - detailed manual on cypher syntax</p>
 </li>
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
-<p><a href="https://neo4j.com/graphacademy/online-training/v4/00-intro-neo4j-about/">Online Training - Introuction to Neo4j</a> - If you are new to Neo4j and like to learn through an online class, this is the best place to get started.</p>
+<p><a href="https://neo4j.com/graphacademy/online-training/v4/00-intro-neo4j-about/">Online Training - Introduction to Neo4j</a> - If you are new to Neo4j and like to learn through an online class, this is the best place to get started.</p>
 </li>
 </ol>
 </div>

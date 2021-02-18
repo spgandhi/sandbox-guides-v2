@@ -34,7 +34,7 @@ Hint: You can click on the query above to populate it in the editor.
 </div>
 ++++
 
-*Expected Result*: The above query will return all the movies that were realesed after the year 2000 limiting the result to 5 items.
+*Expected Result*: The above query will return all the movies that were released after the year 2000 limiting the result to 5 items.
 
 image::{images}/5-movies.svg[width="100%"]
 
@@ -136,7 +136,7 @@ image::{images}/movies-properties.jpg[width="100%"]
 
 *Try*
 
-1. Wrtie a query to get `name` and `born` properties of the Person node.
+1. Write a query to get `name` and `born` properties of the Person node.
 +
 [source.try-cypher-result,cypher]
 MATCH (p:Person) return p.name, p.born
@@ -261,9 +261,9 @@ Although, in the case of the movies dataset, the direction of the relationship i
 even without denoting the direction in the query, it will return the same result. So the query -
 
 [source, cypher]
-MATCH (p:Person)-[:ACTED_IN]-(m:Movie) RETURN p,r,m
+MATCH (p:Person)-[r:ACTED_IN]-(m:Movie) RETURN p,r,m
 
-will return the same reuslt as the above one.
+will return the same result as the above one.
 
 *Try*
 
@@ -274,7 +274,7 @@ will return the same reuslt as the above one.
 MATCH (p:Person)-[r:REVIEWED]-(m:Movie) return p,r,m
 ----
 
-== Advcance Cypher queries
+== Advance Cypher queries
 
 Let's look at some questions that you can answer with cypher queries.
 
@@ -312,4 +312,4 @@ Feel free to play around with the data by writing more cypher queries. If you wa
 you can use one of the below resources -
 
 1. link:https://neo4j.com/docs/cypher-manual/4.0/[Cypher Manual] - detailed manual on cypher syntax
-2. link:https://neo4j.com/graphacademy/online-training/v4/00-intro-neo4j-about/[Online Training - Introuction to Neo4j] - If you are new to Neo4j and like to learn through an online class, this is the best place to get started.
+2. link:https://neo4j.com/graphacademy/online-training/v4/00-intro-neo4j-about/[Online Training - Introduction to Neo4j] - If you are new to Neo4j and like to learn through an online class, this is the best place to get started.
