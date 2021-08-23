@@ -12,14 +12,12 @@ if [ "$1" == "publish" ]; then
   render movies.adoc aura_index.html http://$AURA_URL
 
   # Sandbox Guide Deployment
-  aws s3 cp sandbox_index.html s3://$SANDBOX_URL/index.html
-  aws s3 cp --acl public-read --recursive --exclude "*" --include "*.html" --include "*.png" --include "*.jpg" --include "*.gif" . s3://${SANDBOX_URL}/
-  aws s3 cp --acl public-read index.html s3://${SANDBOX_URL}
+  aws s3 cp sandbox_index.html s3://$SANDBOX_URL/index.html --acl public-read
+  aws s3 cp . s3://${SANDBOX_URL}/ --acl public-read --recursive --exclude "*" --include "*.png" --include "*.jpg" --include "*.gif" --include "*.svg"
 
   # Aura Guide Deployment
-  aws s3 cp aura_index.html s3://$AURA_URL/index.html
-  aws s3 cp --acl public-read --recursive --exclude "*" --include "*.html" --include "*.png" --include "*.jpg" --include "*.gif" . s3://${AURA_URL}/
-  aws s3 cp --acl public-read index.html s3://${AURA_URL}
+  aws s3 cp aura_index.html s3://$AURA_URL/index.html --acl public-read
+  aws s3 cp . s3://${AURA_URL}/ --acl public-read --recursive --exclude "*" --include "*.png" --include "*.jpg" --include "*.gif" --include "*.svg"
  
   echo "Publication Done"
 elif [ "$1" == "render-only" ]; then

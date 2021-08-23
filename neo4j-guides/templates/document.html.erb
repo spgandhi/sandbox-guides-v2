@@ -21,25 +21,11 @@
 <style type="text/css" media="screen">
 /* #editor.maximize-editor .CodeMirror-code { font-size:24px; line-height:26px; } */
 </style>
+
+
+<title><%= %(#{attr :title}) %></title>
 <article class="guide" ng-controller="AdLibDataController">
   <carousel class="deck container-fluid">
-    <!--slide class="row-fluid">
-      <div class="col-sm-3">
-        <h3><%= doctitle(:sanitize => true) || (attr 'untitled-label') || 'Neo4j GraphGist'%></h3>
-        <p class="lead">Information</p>
-			<!dl>
-				<%
-				[:description, :keywords, :author, :copyright].each do |key|
-				  if attr? key %><dt><%= key %>"</dt><dd><%= attr key %></dd><% end %>
-				<% end %>
-			</dl>
-		</div>
-      <div class="col-sm-9">
-        <figure>
-          <img style="width:300px" src="<%= attr :image%>"/>
-        </figure>
-      </div>
-    </slide-->
     <%= content %>
   </carousel>
 </article>

@@ -1,6 +1,11 @@
-﻿// https://docs.google.com/a/neotechnology.com/presentation/d/1uajyGl64zdpHjD1d92hQVEJErdnnZ9bACJF7J-TnEWI/edit?usp=drive_web
-// https://www.vmware.com/pdf/vi_architecture_wp.pdf
-// ping Alan, share document
+﻿:title: Movies Guide
+:neo4j-version: 4.x
+:author: Shreyans Gandhi
+:tags: movies
+:images: https://dl.dropboxusercontent.com/u/14493611
+:images: {img}
+:experimental:
+
 ++++
 <style type="text/css">
 .smallest {
@@ -8,13 +13,6 @@
 }
 </style>
 ++++
-
-:neo4j-version: 4.x
-:author: Shreyans Gandhi
-:tags: movies
-:images: https://dl.dropboxusercontent.com/u/14493611
-:images: {img}
-:experimental:
 
 ==  What is Cypher?
 
