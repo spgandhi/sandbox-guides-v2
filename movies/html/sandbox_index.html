@@ -584,6 +584,14 @@ you can use one of the below resources -</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
+<p>Sign up for a forever-free, fully managed cloud database-as-a-service to continue your graph learning journey or build your first application.
+ 
+ <div style="margin-top: 24px; margin-bottom: 12px;">
+  <a href="https://neo4j.com/cloud/aura/?ref=sandbox-movies-guide" style="background-color: #ED1252;color: #FFFFFF; padding: 9px 24px; text-decoration: none; border-radius: 4px;" target="_blank" class="aura-cta">Start Aura Free</a></div>
+<div style="font-size: 14px;"><i>Free Forever! No credit card required!</i></div>
+ </p>
+</li>
+<li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
 <p><a href="https://neo4j.com/docs/cypher-manual/4.0/">Cypher Manual</a> - detailed manual on cypher syntax</p>
 </li>
 <li style='margin-bottom: 12px; font-size: 16px; line-height: 28px;'>
@@ -591,6 +599,29 @@ you can use one of the below resources -</p>
 </li>
 </ol>
 </div>
+<script>
+try {
+  const fn = function() {
+    const mpid = encodeURIComponent(window.mixpanel && window.mixpanel.get_distinct_id());
+    if(!mpid || mpid === 'undefined') {
+      console.warn('no mixpanel ID found');
+      return;
+    };
+    document.querySelectorAll(".aura-cta").forEach(function(element) {
+      if (element.href.indexOf("neo4j.io") > -1) {
+        const alreadyHasParam = element.href.indexOf("?") > -1;
+        const mpParams = `mpid=${mpid}`;
+        element.href = element.href + (alreadyHasParam ? `&${mpParams}` : `?${mpParams}`);
+      }
+    });
+  };
+
+  if (document.readyState === "complete") fn();
+  else window.addEventListener("load", fn);
+} catch(e) {
+  console.warn('something wrong with mixpanel script');
+}
+</script>
 	</div>
   </div>
 </slide>

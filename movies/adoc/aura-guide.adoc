@@ -1,0 +1,11 @@
+include::main.adoc[]
+
+== Great Job!
+
+Now you know the basics of writing cypher query. You are on your way to becoming a graphista! Congratulations.
+
+Feel free to play around with the data by writing more cypher queries. If you want to learn more about cypher,
+you can use one of the below resources -
+
+1. link:https://neo4j.com/docs/cypher-manual/4.0/[Cypher Manual] - detailed manual on cypher syntax
+2. link:https://neo4j.com/graphacademy/online-training/v4/00-intro-neo4j-about/[Online Training - Introduction to Neo4j] - If you are new to Neo4j and like to learn through an online class, this is the best place to get started.
