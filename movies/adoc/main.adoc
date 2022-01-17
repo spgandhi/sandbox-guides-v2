@@ -242,7 +242,7 @@ In Neo4j, there can be 2 kinds of relationships - **incoming** and **outgoing**.
 
 image::{images}/relationship-types.svg[width='400']
 
-In the above picture, the Tom Hanks node is said to have an outgoing relationship while Forrest Gump node is said to have an incoming relationship.
+In the above picture, the Tom Hanks node is said to have an outgoing relationship while Cloud Atlas node is said to have an incoming relationship.
 
 Relationships always have a direction. However, you only have to pay attention to the direction where it is useful.
 
